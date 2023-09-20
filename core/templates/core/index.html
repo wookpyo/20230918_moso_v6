@@ -1,0 +1,37 @@
+{% extends 'core/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<br><br>
+<div class="container container-custom" style="width: 90%; font-size:14px">
+    <h6 class="card p-2 bg-secondary text-light text-center mb-3">List of Moso</h6>
+
+    <table class="table table-bordered text-center">
+        <thead class="table-secondary">
+            <tr>
+                <th style="width: 10%;">date</th>
+                <th style="width: 10%;">주간/야간</th>
+                <th style="width: 10%;">호기</th>
+                <th style="width: 10%;">주문 번호</th>
+                <th style="width: 10%;">제품명</th>
+                <th style="width: 10%;">색상</th>
+                <th style="width: 10%;">생산 수량</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data %}
+            <tr>
+                <td>{{ item.work_date|date:"Y-m-d" }}</td>
+                <td>{{item.work_team}}</td>
+                <td>{{item.machine_number}}</td>
+                <td>{{item.order_number}}</td>
+                <td>{{item.product_name}}</td>
+                <td>{{item.product_color}}</td>
+                <td>{{item.quantity}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

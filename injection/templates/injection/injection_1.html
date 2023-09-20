@@ -1,0 +1,247 @@
+{% extends 'core/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container mt-3" style="width: 95%; font-size: 14px;">
+    <form method="POST" enctype="multipart/form-data" class="mt-5" autocomplete="off" novalidate>
+        {% csrf_token %}
+        <!-- Card 1 -->
+        <span class="btn btn-secondary mb-4" style="cursor: default;"> (1호기) - DPH 70 - </span>
+        <div class="card border-dark p-3">
+            {% for message in messages %}
+            {% if message.tags == 'success' %}
+            <div class="text-center alert alert-primary alert-dismissible fade show" role="alert">{{message}}
+                <a href="{% url 'injection1' %}" type="button" class="btn btn-close" data-bs-dismiss="alert" aria-label="Close"></a>
+            </div>
+            {% endif %}
+            {% endfor %}
+            <div class="col-3">{{ form.machine_number|as_crispy_field }}</div>
+            <span class="btn btn-secondary mb-4" style="cursor: default;">DATE</span>
+            <div class="row">
+                <div class="col-3">{{ form.work_date|as_crispy_field }}</div>
+                <div class="col-3">{{ form.work_time|as_crispy_field }}</div>
+                <div class="col-3">{{ form.product_name|as_crispy_field }}</div>
+                <div class="col-3">{{ form.product_color|as_crispy_field }}</div>
+                <div class="col-3">{{ form.work_team|as_crispy_field }}</div>
+                <div class="col-3">{{ form.order_quantity|as_crispy_field }}</div>
+                <div class="col-3">{{ form.order_number|as_crispy_field }}</div>
+                <hr style="border: 1px solid #ffffff;">
+                <div class="col-2">{{ form.male_1|as_crispy_field }}</div>
+                <div class="col-2">{{ form.male_2|as_crispy_field }}</div>
+                <div class="col-2">{{ form.male_3|as_crispy_field }}</div>
+                <div class="col-2">{{ form.female_1|as_crispy_field }}</div>
+                <div class="col-2">{{ form.female_2|as_crispy_field }}</div>
+                <div class="col-2">{{ form.female_3|as_crispy_field }}</div>
+                <div class="col-2">{{ form.female_4|as_crispy_field }}</div>
+                <div class="col-2">{{ form.female_5|as_crispy_field }}</div>
+                <div class="col-2">{{ form.female_6|as_crispy_field }}</div>
+            </div>
+            <div class="row">
+                <div class="col-4">{{ form.quantity|as_crispy_field }}</div>
+                <div class="col-4">{{ form.quantity_per_box|as_crispy_field }}</div>
+                <div class="col-4">{{ form.box_quantity|as_crispy_field }}</div>
+            </div>
+            <span class="btn btn-secondary mb-4" style="cursor: default;">Machine information</span>
+            <div class="row">
+                <div class="col-3" >{{ form.chiller_temperature|as_crispy_field }}</div>
+                <div class="col-3">{{ form.hopper_temperature|as_crispy_field }}</div>
+                <div class="col-3">{{ form.hot_oil_temperature|as_crispy_field }}</div>
+                <div class="col-3">{{ form.masterbatch_dry_temperature|as_crispy_field }}</div>
+                <span class="btn btn-secondary mb-4" style="cursor: default;">Product spec</span>
+                <div class="row">
+                    <div class="col-3">{{ form.resin|as_crispy_field }}</div>
+                    <div class="col-3">{{ form.masterbatch_number|as_crispy_field }}</div>
+                    <div class="col-3">{{ form.cycle_time|as_crispy_field }}</div>
+                    <div class="col-3">{{ form.cavity_weight|as_crispy_field }}</div>
+                    <div class="col-3">{{ form.cavity_quantity|as_crispy_field }}</div>
+                </div>
+                <span class="btn btn-secondary mb-4" style="cursor: default;">Timer setting</span>
+            <div class="row">
+                <div class="col-2">{{ form.time_injection1|as_crispy_field }}</div>
+                <div class="col-2">{{ form.time_injection2|as_crispy_field }}</div>
+                <div class="col-2">{{ form.time_injection3|as_crispy_field }}</div>
+                <div class="col-2">{{ form.time_injection4|as_crispy_field }}</div>
+                <div class="col-2">{{ form.time_injection5|as_crispy_field }}</div>
+                <div class="col-2">{{ form.time_injection6|as_crispy_field }}</div>
+                <div class="col-2">{{ form.time_injection7|as_crispy_field }}</div>
+                <div class="col-2">{{ form.time_injection8|as_crispy_field }}</div>
+                <div class="col-2">{{ form.time_injection9|as_crispy_field }}</div>
+                <hr style="border: 1px solid #743131;">
+                <div class="col-2">{{ form.time_injection10|as_crispy_field }}</div>
+                <div class="col-2">{{ form.time_injection11|as_crispy_field }}</div>
+                <div class="col-2">{{ form.time_injection12|as_crispy_field }}</div>
+                <div class="col-2">{{ form.time_injection13|as_crispy_field }}</div>
+                <div class="col-2">{{ form.time_injection14|as_crispy_field }}</div>
+                <div class="col-2">{{ form.time_injection15|as_crispy_field }}</div>
+                <div class="col-2">{{ form.time_injection16|as_crispy_field }}</div>
+                <div class="col-2">{{ form.time_injection17|as_crispy_field }}</div>
+                <div class="col-2">{{ form.time_injection18|as_crispy_field }}</div>
+                <div class="col-2">{{ form.time_injection19|as_crispy_field }}</div>
+                <hr style="border: 1px solid #743131;">
+                <div class="col-2">{{ form.time_injection20|as_crispy_field }}</div>
+                <div class="col-2">{{ form.time_injection21|as_crispy_field }}</div>
+                <div class="col-2">{{ form.time_injection22|as_crispy_field }}</div>
+                <div class="col-2">{{ form.time_injection23|as_crispy_field }}</div>
+                <div class="col-2">{{ form.time_injection24|as_crispy_field }}</div>
+                <div class="col-2">{{ form.time_injection25|as_crispy_field }}</div>
+                <div class="col-2">{{ form.time_injection26|as_crispy_field }}</div>
+                <div class="col-2">{{ form.time_injection27|as_crispy_field }}</div>
+                <div class="col-2">{{ form.time_injection28|as_crispy_field }}</div>
+                <div class="col-2">{{ form.bottom_option|as_crispy_field }}</div>
+            </div>
+            <span class="btn btn-secondary mb-4" style="cursor: default;">Heating setting</span>
+            <div class="row">
+                <div class="col-2">{{ form.heating_setting1|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting2|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting3|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting4|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting5|as_crispy_field }}</div>
+                <hr style="border: 1px solid #743131;">
+                <div class="col-2">{{ form.heating_setting6|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting7|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting8|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting9|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting10|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting11|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting12|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting13|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting14|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting15|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting16|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting17|as_crispy_field }}</div>
+                <hr style="border: 1px solid #743131;">
+                <div class="col-2">{{ form.heating_setting18|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting19|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting20|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting21|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting22|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting23|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting24|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting25|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting26|as_crispy_field }}</div>
+                <hr style="border: 1px solid #743131;">
+                <div class="col-2">{{ form.heating_setting27|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting28|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting29|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting30|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting31|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting32|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting33|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting34|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting35|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting36|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting37|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting38|as_crispy_field }}</div>
+                <hr style="border: 1px solid #743131;">
+
+                <div class="col-2">{{ form.heating_setting39|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting40|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting41|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting42|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting43|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting44|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting45|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting46|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting47|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting48|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting49|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting50|as_crispy_field }}</div>
+                <hr style="border: 1px solid #743131;">
+                <div class="col-2">{{ form.heating_setting51|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting52|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting53|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting54|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting55|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting56|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting57|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting58|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting59|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting60|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting61|as_crispy_field }}</div>
+                <div class="col-2">{{ form.heating_setting62|as_crispy_field }}</div>
+                <hr style="border: 1px solid #743131;">
+            </div>
+            <span class="btn btn-secondary mb-4" style="cursor: default;">Injetion setting</span>
+            <div class="row">
+                <div class="col-2">{{ form.injetion_setting1|as_crispy_field }}</div>
+                <div class="col-2">{{ form.injetion_setting2|as_crispy_field }}</div>
+                <div class="col-2">{{ form.injetion_setting3|as_crispy_field }}</div>
+                <div class="col-2">{{ form.injetion_setting4|as_crispy_field }}</div>
+                <div class="col-2">{{ form.injetion_setting5|as_crispy_field }}</div>
+                <hr style="border: 1px solid #ffffff;">
+                <div class="col-2">{{ form.injetion_setting6|as_crispy_field }}</div>
+                <div class="col-2">{{ form.injetion_setting7|as_crispy_field }}</div>
+                <div class="col-2">{{ form.injetion_setting8|as_crispy_field }}</div>
+                <div class="col-2">{{ form.injetion_setting9|as_crispy_field }}</div>
+                <div class="col-2">{{ form.injetion_setting10|as_crispy_field }}</div>
+                <hr style="border: 1px solid #ffffff;">
+                <div class="col-2">{{ form.injetion_setting11|as_crispy_field }}</div>
+                <div class="col-2">{{ form.injetion_setting12|as_crispy_field }}</div>
+                <div class="col-2">{{ form.injetion_setting13|as_crispy_field }}</div>
+                <div class="col-2">{{ form.injetion_setting14|as_crispy_field }}</div>
+                <div class="col-2">{{ form.injetion_setting15|as_crispy_field }}</div>
+                <hr style="border: 1px solid #ffffff;">
+                <div class="col-2">{{ form.injetion_setting16|as_crispy_field }}</div>
+                <div class="col-2">{{ form.injetion_setting17|as_crispy_field }}</div>
+                <div class="col-2">{{ form.injetion_setting18|as_crispy_field }}</div>
+                <div class="col-2">{{ form.injetion_setting19|as_crispy_field }}</div>
+                <hr style="border: 1px solid #743131;">
+                <div class="col-2">{{ form.injetion_setting20|as_crispy_field }}</div>
+                <div class="col-2">{{ form.injetion_setting21|as_crispy_field }}</div>
+                <hr style="border: 1px solid #ffffff;">
+                <div class="col-2">{{ form.injetion_setting22|as_crispy_field }}</div>
+                <div class="col-2">{{ form.injetion_setting23|as_crispy_field }}</div>
+                <div class="col-2">{{ form.injetion_setting24|as_crispy_field }}</div>
+                <hr style="border: 1px solid #ffffff;">
+                <div class="col-2">{{ form.injetion_setting25|as_crispy_field }}</div>
+                <div class="col-2">{{ form.injetion_setting26|as_crispy_field }}</div>
+                <div class="col-2">{{ form.injetion_setting27|as_crispy_field }}</div>
+                <hr style="border: 1px solid #ffffff;">
+                <div class="col-2">{{ form.injetion_setting28|as_crispy_field }}</div>
+                <div class="col-2">{{ form.injetion_setting29|as_crispy_field }}</div>
+                <div class="col-2">{{ form.injetion_setting30|as_crispy_field }}</div>
+                <div class="col-2">{{ form.injetion_setting31|as_crispy_field }}</div>
+                <hr style="border: 1px solid #743131;">
+                <div class="col-2">{{ form.injetion_setting32|as_crispy_field }}</div>
+                <hr style="border: 1px solid #ffffff;">
+                <div class="col-2">{{ form.injetion_setting33|as_crispy_field }}</div>
+                <div class="col-2">{{ form.injetion_setting34|as_crispy_field }}</div>
+                <hr style="border: 1px solid #ffffff;">
+                <div class="col-2">{{ form.injetion_setting35|as_crispy_field }}</div>
+                <div class="col-2">{{ form.injetion_setting36|as_crispy_field }}</div>
+                <hr style="border: 1px solid #ffffff;">
+                <div class="col-2">{{ form.injetion_setting37|as_crispy_field }}</div>
+                <div class="col-2">{{ form.injetion_setting38|as_crispy_field }}</div>
+                <hr style="border: 1px solid #ffffff;">
+                <div class="col-2">{{ form.injetion_setting39|as_crispy_field }}</div>
+                <div class="col-2">{{ form.injetion_setting40|as_crispy_field }}</div>
+                <hr style="border: 1px solid #ffffff;">
+                <div class="col-2">{{ form.injetion_setting41|as_crispy_field }}</div>
+                <div class="col-2">{{ form.injetion_setting42|as_crispy_field }}</div>
+                <hr style="border: 1px solid #ffffff;">
+                <div class="col-2">{{ form.injetion_setting43|as_crispy_field }}</div>
+                <div class="col-2">{{ form.injetion_setting44|as_crispy_field }}</div>
+                <hr style="border: 1px solid #ffffff;">
+                <div class="col-2">{{ form.injetion_setting45|as_crispy_field }}</div>
+                <div class="col-2">{{ form.injetion_setting46|as_crispy_field }}</div>
+
+            </div>
+            </div>
+            
+            {{ form.message|as_crispy_field }}
+        </div>
+        <hr style="border: 1px solid #743131;">
+        <button type="submit" class="btn btn-outline-secondary mt-3 my-btn">Submit</button>
+        <a href="/" class="btn btn-dark mt-3 my-btn">Reset</a>
+        
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br><br><br><br><br><br>
+    </form>
+</div>
+{% endblock %}
